@@ -1,5 +1,7 @@
 node_modules
-.idea
+*.idea
 *.node_repl_history
 *.msi
 *.sqlite*
+package-lock.json
+.env
