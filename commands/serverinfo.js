@@ -1,24 +1,58 @@
 const Discord = require('discord.js');
-exports.run = (client, message, args) => {
-  const embed = new Discord.RichEmbed()
-    .setColor(0x00AE86)
-    .setTimestamp()
-    .setImage('https://i.imgur.com/QekwcJE.png')
-    .setDescription(`The picture below is automatically generated | This bot is hosted by https://discordbothosting.com`);
-    
-  return message.channel.send({embed});
+
+function checkDays(date) {
+    let now = new Date();
+    let diff = now.getTime() - date.getTime();
+    let days = Math.floor(diff / 86400000);
+    return days + (days == 1 ? " day" : " days") + " ago";
 };
+
+exports.run = (client, message) => {
+    let embed = new Discord.RichEmbed();
+    let verifLevels = ["None", "Low", "Medium", "(╯°□°）╯︵  ┻━┻", "┻━┻ミヽ(ಠ益ಠ)ノ彡┻━┻"];
+    let region = {
+        "brazil": "Brazil",
+        "europe": "Central Europe",
+        "singapore": "Singapore",
+        "us-central": "U.S. Central",
+        "sydney": "Sydney",
+        "us-east": "U.S. East",
+        "us-south": "U.S. South",
+        "us-west": "U.S. West",
+        "vip-us-east": "VIP U.S. East",
+        "hongkong": "Hong Kong"
+    };
+
+    var emojis;
+    if (message.guild.emojis.size === 0) {
+        emojis = 'None';
+    } else {
+        emojis = message.channel.guild.emojis.map(e => e).join(" ");
+    }
+    embed.setAuthor(message.guild.name, message.guild.iconURL ? message.guild.iconURL : client.user.displayAvatarURL)
+        .setThumbnail(message.guild.iconURL ? message.guild.iconURL : client.user.displayAvatarURL)
+        .addField("Created", `${message.guild.createdAt.toString().substr(0, 15)},\n${checkDays(message.guild.createdAt)}`, true)
+        .addField("ID", message.guild.id, true)
+        .addField("Owner", `${message.guild.owner.user.username}#${message.guild.owner.user.discriminator}`, true)
+        .addField("Region", region[message.guild.region], true)
+        .addField("Members", message.guild.memberCount, true)
+        .addField("Roles", message.guild.roles.size, true)
+        .addField("Channels", message.guild.channels.size, true)
+        //.addField("Emojis", emojis, true)
+        .setColor(client.config.embedColor);
+    message.channel.send({ embed });
+}
 
 exports.conf = {
-  enabled: true,
-  guildOnly: false,
-  aliases: ["Serverinfo", "sinfo", "Sinfo"],
-  permLevel: "User"
-};
-
-exports.help = {
-  name: 'serverinfo',
-  category: "Miscelaneous",
-  description: 'Shows you the bots server info',
-  usage: 'sinfo, Serverinfo, Sinfo, serverinfo'
-};
+    enabled: true,
+    guildOnly: true,
+    aliases: ["Serverinfo", "serverinfo","info","Info"],
+    permLevel: "User"
+  };
+  
+  exports.help = {
+    name: 'Serverinfo',
+    category: "Info",
+    description: "Shows you the serverinfo",
+    usage: 'Serverinfo,serverinfo,info,Info'
+  };

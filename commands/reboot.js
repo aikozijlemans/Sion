@@ -1,4 +1,4 @@
-exports.run = async (client, message, args, level) => { 
+exports.run = async (client, message, args, level) => { // eslint-disable-line no-unused-vars
   await message.reply("Bot is shutting down.");
   await Promise.all(client.commands.map(cmd =>
     client.unloadCommand(cmd)
@@ -10,12 +10,12 @@ exports.conf = {
   enabled: true,
   guildOnly: false,
   aliases: [],
-  permLevel: "Bot Admin"
+  permLevel: "Developer"
 };
 
 exports.help = {
   name: "reboot",
-  category: "System",
+  category: "[X] Sion Staff",
   description: "Shuts down the bot. If running under PM2, bot will restart automatically.",
   usage: "reboot"
 };

@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 exports.run = (client, message, args) => {
   let reason = args.slice(1).join(' ');
   let user = message.mentions.users.first();
-  let modlog = client.channels.find('name', 'mod-log');
+  const modlog = client.channels.find('name', 'sion-logs');
   if (!modlog) return message.reply('I cannot find a mod-log channel');
   if (reason.length < 1) return message.reply('You must supply a reason for the ban.');
   if (message.mentions.users.size < 1) return message.reply('You must mention someone to ban them.').catch(console.error);
@@ -20,7 +20,7 @@ exports.run = (client, message, args) => {
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: [],
+  aliases: ["Ban"],
   permLevel: "Administrator"
 };
 
@@ -28,5 +28,5 @@ exports.help = {
   name: 'ban',
   category: "Admin Commands",
   description: 'Bans the mentioned user.',
-  usage: 'ban [mention] [reason]'
+  usage: '~ban <mention> <reason>'
 };

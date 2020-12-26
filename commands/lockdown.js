@@ -45,5 +45,5 @@ exports.help = {
   name: 'lockdown',
   category: "Admin Commands",
   description: 'This will lock a channel down for the set duration, be it in hours, minutes or seconds.',
-  usage: 'lockdown <duration>'
+  usage: '~lockdown <duration>'
 };

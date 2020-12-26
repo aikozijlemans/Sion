@@ -21,5 +21,5 @@ exports.run = (client, message, args) => {
     name: 'unban',
     category: "Admin Commands",
     description: 'Unbans the user.',
-    usage: 'unban [mention] [reason]'
+    usage: '~unban [mention] [reason]'
   };

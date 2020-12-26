@@ -16,7 +16,7 @@ exports.run = (client, msg, args) => {
 exports.conf = {
     enabled: true,
     guildOnly: false,
-    aliases: ["Ass", "ass","ASS"],
+    aliases: ["Ass", "ass","ASS","booty","Booty"],
     permLevel: "User"
   };
   
@@ -24,5 +24,5 @@ exports.conf = {
     name: 'ass',
     category: "NSFW",
     description: 'shows you that booty',
-    usage: 'ass, Ass, ASS'
+    usage: 'ass, Ass, ASS,booty,Booty'
   };

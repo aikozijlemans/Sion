@@ -1,18 +1,18 @@
 const Discord = require('discord.js');
 exports.run = (client, message, args) => {
-  return message.channel.send("Hello, this is the link to the support server: https://discord.gg/ESQSmzH");
+  return message.channel.send("Hello, this is the link to the support server: https://discord.gg/6EtugHk");
 };
 
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ["server", "guide", "Server", "Guide", "support", "Support"],
+  aliases: ["Support"],
   permLevel: "User"
 };
 
 exports.help = {
   name: 'support',
-  category: "Miscelaneous",
+  category: "Support",
   description: 'Invites you to the support server',
-  usage: 'server, guide, Server, Guide, support, Support'
+  usage: '~Support'
 };

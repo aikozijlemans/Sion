@@ -16,5 +16,5 @@ exports.run = (client, message, args) => {
     name: 'purge',
     category: "Admin Commands",
     description: 'Purges X amount of messages from a given channel.',
-    usage: 'purge <number>'
+    usage: '~purge <number>'
   };

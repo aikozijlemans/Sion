@@ -1,7 +1,7 @@
 {
-  "name": "defensionems moderation",
+  "name": "Sion",
   "version": "2.3.6",
-  "description": "wip",
+  "description": "Nothing Special",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
@@ -14,24 +14,26 @@
     "type": "git",
     "url": "git+https://github.com/jeremyzijlemans/Defensionem-s-Moderation.git"
   },
-  "author": "Defensionem",
+  "author": "Defenisonem",
   "contributors": [
-    "No one"
+    "Black"
   ],
   "license": "MIT",
   "bugs": {
-    "url": "censored"
+    "url": "https://github.com/jeremyzijlemans/Defensionem-s-Moderation/blob/master/LICENSE"
   },
-  "homepage": "censored",
+  "homepage": "https://github.com/jeremyzijlemans/Defensionem-s-Moderation",
   "dependencies": {
     "better-sqlite-pool": "^0.2.3",
     "better-sqlite3": "^6.0.1",
     "chalk": "^2.4.2",
-    "discord.js": "^11.5.1",
-    "enmap": "^5.0.0",
-    "inquirer": "^6.3.1",
-    "moment": "^2.24.0",
+    "discord.js": "^11.6.4",
+    "enmap": "^5.8.2",
+    "inquirer": "^6.5.2",
+    "moment": "^2.29.1",
     "moment-duration-format": "^2.3.2",
-    "superagent": "^5.2.2"
+    "node-gyp": "^7.1.2",
+    "package.json": "^2.0.1",
+    "superagent": "^5.3.1"
   }
 }

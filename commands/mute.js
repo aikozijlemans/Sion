@@ -38,5 +38,5 @@ exports.help = {
   name: 'mute',
   category: "Admin Commands",
   description: 'mutes or unmutes a mentioned user',
-  usage: 'un/mute [mention] [reason]'
+  usage: '~un/mute [mention] [reason]'
 };

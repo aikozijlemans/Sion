@@ -1,6 +1,6 @@
 const { inspect } = require("util");
 
-exports.run = async (client, message, [action, key, ...value], level) => { 
+exports.run = async (client, message, [action, key, ...value], level) => { // eslint-disable-line no-unused-vars
 
   const defaults = client.settings.get("default");
   
@@ -63,12 +63,12 @@ exports.conf = {
   enabled: true,
   guildOnly: true,
   aliases: ["defaults"],
-  permLevel: "Bot Admin"
+  permLevel: "CFO"
 };
 
 exports.help = {
   name: "conf",
-  category: "System",
+  category: "[X] Sion Staff",
   description: "Modify the default configuration for all guilds.",
-  usage: "conf <view/get/edit> <key> <value>"
+  usage: "~conf <view/get/edit> <key> <value>"
 };

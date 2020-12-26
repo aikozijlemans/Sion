@@ -1,6 +1,5 @@
 module.exports = (client) => {
-
- client.permlevel = message => {
+  client.permlevel = message => {
     let permlvl = 0;
 
     const permOrder = client.config.permLevels.slice(0).sort((p, c) => p.level < c.level ? 1 : -1);
@@ -16,7 +15,7 @@ module.exports = (client) => {
     return permlvl;
   };
 
- const defaultSettings = {
+  const defaultSettings = {
     "prefix": "~",
     "modLogChannel": "mod-log",
     "modRole": "Moderator",
@@ -34,7 +33,7 @@ module.exports = (client) => {
     return ({...client.settings.get("default"), ...guildConf});
   };
 
- client.awaitReply = async (msg, question, limit = 60000) => {
+  client.awaitReply = async (msg, question, limit = 60000) => {
     const filter = m => m.author.id === msg.author.id;
     await msg.channel.send(question);
     try {
@@ -43,6 +42,7 @@ module.exports = (client) => {
     } catch (e) {
       return false;
     }
+  };
 
   client.clean = async (client, text) => {
     if (text && text.constructor.name == "Promise")
@@ -97,20 +97,16 @@ module.exports = (client) => {
     }
     return false;
   };
-  };
-
   Object.defineProperty(String.prototype, "toProperCase", {
     value: function() {
       return this.replace(/([^\W_]+[^\s-]*) */g, (txt) => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase());
     }
   });
-
   Object.defineProperty(Array.prototype, "random", {
     value: function() {
       return this[Math.floor(Math.random() * this.length)];
     }
   });
-
   client.wait = require("util").promisify(setTimeout);
 
   process.on("uncaughtException", (err) => {

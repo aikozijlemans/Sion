@@ -1,6 +1,7 @@
 exports.run = (client, message, args, level) => {
   if (!args[0]) {
     const myCommands = message.guild ? client.commands.filter(cmd => client.levelCache[cmd.conf.permLevel] <= level) : client.commands.filter(cmd => client.levelCache[cmd.conf.permLevel] <= level &&  cmd.conf.guildOnly !== true);
+
     const commandNames = myCommands.keyArray();
     const longest = commandNames.reduce((long, str) => Math.max(long, str.length), 0);
 
@@ -35,7 +36,7 @@ exports.conf = {
 
 exports.help = {
   name: "help",
-  category: "System",
+  category: "Support",
   description: "Displays all the available commands for your permission level.",
   usage: "help [command]"
 };

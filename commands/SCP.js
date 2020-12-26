@@ -26,7 +26,7 @@ exports.conf = {
   
   exports.help = {
     name: 'SCP',
-    category: "fun",
+    category: "Fun",
     description: "Special containment protocol",
     usage: 'SCP,scp'
   };

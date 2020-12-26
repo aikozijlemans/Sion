@@ -1,4 +1,4 @@
-exports.run = async (client, message, args, level) => { 
+exports.run = async (client, message, args, level) => { // eslint-disable-line no-unused-vars
   const code = args.join(" ");
   try {
     const evaled = eval(code);
@@ -13,12 +13,12 @@ exports.conf = {
   enabled: true,
   guildOnly: false,
   aliases: [],
-  permLevel: "Bot Owner"
+  permLevel: "Developer"
 };
 
 exports.help = {
   name: "eval",
-  category: "System",
+  category: "[X] Sion Staff",
   description: "Evaluates arbitrary javascript.",
   usage: "eval [...code]"
 };

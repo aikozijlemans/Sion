@@ -26,7 +26,7 @@ exports.conf = {
   
   exports.help = {
     name: 'Meme',
-    category: "fun",
+    category: "Fun",
     description: "Memes",
     usage: 'Meme,meme'
   };
