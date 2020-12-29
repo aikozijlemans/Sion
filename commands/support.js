@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 exports.run = (client, message, args) => {
-  return message.channel.send("Hello, this is the link to the support server: https://discord.gg/6EtugHk");
+  return message.channel.send("Hello, We have multiple ways of offering support please select one of the following:\nEmail: support@siondevelopment.xyz\nDiscord support server: https://discord.gg/f4J7SUT\nWebsite: http://siondevelopment.xyz/");
 };
 
 exports.conf = {
